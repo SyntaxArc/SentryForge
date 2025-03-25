@@ -6,9 +6,12 @@ A streamlined, production-ready fork of [Sentry](https://sentry.io/) designed fo
 
 ## System Requirements
 
+ 
+## Requirements
+
 - Docker 20.10.0 or higher
-- Docker Compose 2.0.0 or higher
-- 4 CPU cores
+- Docker Compose 2.32.2 or higher
+- 4 CPU Cores
 - 8 GB RAM
 - 20 GB disk space
 
@@ -19,7 +22,7 @@ A streamlined, production-ready fork of [Sentry](https://sentry.io/) designed fo
 Run the installation script with these recommended options:
 
 ```bash
-./install.sh --no-report-self-hosted-issues SKIP_USER_CREATION=1
+./install.sh --no-report-self-hosted-issues --skip-user-creation
 ```
 
 This command:
