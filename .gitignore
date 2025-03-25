@@ -76,7 +76,7 @@ target/
 docker-compose.override.yml
 
 # https://docs.docker.com/compose/environment-variables/#using-the---env-file--option
-.env.custom
+#.env.custom
 
 *.tar
 data/

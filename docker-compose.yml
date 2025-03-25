@@ -107,7 +107,7 @@ services:
       test: echo stats | nc 127.0.0.1 11211
   redis:
     <<: *restart_policy
-    image: "redis:6.2.14-alpine"
+    image: "redis:7.4-alpine"
     healthcheck:
       <<: *healthcheck_defaults
       test: redis-cli ping | grep PONG
@@ -125,7 +125,7 @@ services:
   postgres:
     <<: *restart_policy
     # Using the same postgres version as Sentry dev for consistency purposes
-    image: "postgres:14.11"
+    image: "postgres:17"
     healthcheck:
       <<: *healthcheck_defaults
       # Using default user "postgres" from sentry/sentry.conf.example.py or value of POSTGRES_USER if provided
@@ -157,6 +157,8 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
       KAFKA_OFFSETS_TOPIC_NUM_PARTITIONS: "1"
       KAFKA_LOG_RETENTION_HOURS: "24"
+      KAFKA_LOG_CLEANER_ENABLE: true
+      KAFKA_LOG_CLEANUP_POLICY: delete
       KAFKA_MESSAGE_MAX_BYTES: "50000000" #50MB or bust
       KAFKA_MAX_REQUEST_SIZE: "50000000" #50MB on requests apparently too
       CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
