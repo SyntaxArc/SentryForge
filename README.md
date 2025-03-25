@@ -9,7 +9,7 @@ This project is a fork of [getsentry/self-hosted](https://github.com/getsentry/s
 ## Requirements
 
 - Docker 20.10.0+
-- Docker Compose 2.0.0+
+- Docker Compose 2.32.2+
 - 4 CPU Cores
 - 8 GB RAM
 - 20 GB Disk Space
@@ -21,7 +21,7 @@ This project is a fork of [getsentry/self-hosted](https://github.com/getsentry/s
 Run the install script with recommended flags:
 
 ```bash
-./install.sh --no-report-self-hosted-issues SKIP_USER_CREATION=1
+./install.sh --no-report-self-hosted-issues --skip-user-creation
 ```
 
 This will:
